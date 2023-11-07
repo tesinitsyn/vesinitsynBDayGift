@@ -1,11 +1,13 @@
 "use client" // this is a client component
 import React from "react"
-import { useState } from "react"
-import { Link } from "react-scroll/modules"
-import { usePathname } from "next/navigation"
-import { useTheme } from "next-themes"
-import { RiMoonFill, RiSunLine } from "react-icons/ri"
-import { IoMdMenu, IoMdClose } from "react-icons/io"
+import {useState} from "react"
+import {Link} from "react-scroll/modules"
+import {usePathname} from "next/navigation"
+import {useTheme} from "next-themes"
+import {RiMoonFill, RiSunLine} from "react-icons/ri"
+import {IoMdMenu, IoMdClose} from "react-icons/io"
+import {Button} from "react-scroll";
+import * as url from "url";
 
 interface NavItem {
     label: string
@@ -22,18 +24,32 @@ const NAV_ITEMS: Array<NavItem> = [
         page: "about",
     },
     {
-        label: "Projects",
-        page: "projects",
+        label: "Employment history",
+        page: "employment history",
     },
 ]
 
+const pdf_url="http://localhost:3000/CV.pdf"
+
 export default function Navbar() {
-    const { systemTheme, theme, setTheme } = useTheme()
+    const {systemTheme, theme, setTheme} = useTheme()
     const currentTheme = theme === "system" ? systemTheme : theme
     const pathname = usePathname()
     const [navbar, setNavbar] = useState(false)
+    const downloadCV=(url: string)=>{
+        const fileName = url.split('/').pop()
+        const aTag = document.createElement('a')
+        aTag.href=url
+        if (typeof fileName === "string") {
+            aTag.setAttribute("download", fileName);
+        }
+        document.body.appendChild(aTag)
+        aTag.click()
+        aTag.remove()
+    }
     return (
-        <header className="w-full mx-auto  px-4 sm:px-20 fixed top-0 z-50 shadow bg-white dark:bg-stone-900 dark:border-b dark:border-stone-600">
+        <header
+            className="w-full mx-auto  px-4 sm:px-20 fixed top-0 z-50 shadow bg-white dark:bg-neutral-900 dark:border-b dark:border-stone-600">
             <div className="justify-between md:items-center md:flex">
                 <div>
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">
@@ -47,7 +63,7 @@ export default function Navbar() {
                                 className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
                                 onClick={() => setNavbar(!navbar)}
                             >
-                                {navbar ? <IoMdClose size={30} /> : <IoMdMenu size={30} />}
+                                {navbar ? <IoMdClose size={30}/> : <IoMdMenu size={30}/>}
                             </button>
                         </div>
                     </div>
@@ -79,19 +95,20 @@ export default function Navbar() {
                                     </Link>
                                 )
                             })}
+                            <button onClick={()=>{downloadCV(pdf_url)}}>Download CV</button>
                             {currentTheme === "dark" ? (
                                 <button
                                     onClick={() => setTheme("light")}
                                     className="bg-slate-100 p-2 rounded-xl"
                                 >
-                                    <RiSunLine size={25} color="black" />
+                                    <RiSunLine size={25} color="black"/>
                                 </button>
                             ) : (
                                 <button
                                     onClick={() => setTheme("dark")}
                                     className="bg-slate-100 p-2 rounded-xl"
                                 >
-                                    <RiMoonFill size={25} />
+                                    <RiMoonFill size={25}/>
                                 </button>
                             )}
                         </div>

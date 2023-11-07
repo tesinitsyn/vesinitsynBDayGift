@@ -8,13 +8,13 @@ const HeroSection = () => {
     return (
         <section id="home">
             <div className="flex flex-col text-center items-center justify-center animate-fadeIn animation-delay-2 my-10 py-16 sm:py-32 md:py-48 md:flex-row md:space-x-4 md:text-left">
-                <div className="md:mt-2 md:w-1/2">
+                <div className="md:mt-2 md:w-1/2  rounded-bl">
                     <Image
                         src="/IMG_4862.jpg"
                         alt=""
                         width={325}
                         height={325}
-                        className="shadow-2xl "
+                        className="shadow-2xl rounded-lg"
                     />
                 </div>
                 <div className="md:mt-2 md:w-3/5">
@@ -31,17 +31,17 @@ const HeroSection = () => {
                             grow and have job satisfaction</li>
                         <li>&#8226; Always in close contact with business in order to fulfil our customers' needs</li>
                     </ul>
-                    <Link
-                        to="projects"
-                        className="text-neutral-100 font-semibold px-6 py-3 bg-teal-600 rounded shadow hover:bg-teal-700"
-                        activeClass="active"
-                        spy={true}
-                        smooth={true}
-                        offset={-100}
-                        duration={500}
-                    >
-                        Employment History
-                    </Link>
+                    {/*<Link*/}
+                    {/*    to="projects"*/}
+                    {/*    className="text-neutral-100 font-semibold px-6 py-3 bg-teal-600 rounded shadow hover:bg-teal-700"*/}
+                    {/*    activeClass="active"*/}
+                    {/*    spy={true}*/}
+                    {/*    smooth={true}*/}
+                    {/*    offset={-100}*/}
+                    {/*    duration={500}*/}
+                    {/*>*/}
+                    {/*    Employment History*/}
+                    {/*</Link>*/}
                 </div>
             </div>
             <div className="flex flex-row items-center text-center justify-center ">

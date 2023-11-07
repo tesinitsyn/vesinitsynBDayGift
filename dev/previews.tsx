@@ -6,6 +6,7 @@ import RootLayout from "@/app/layout";
 import HeroSection from "@/components/heroSection";
 import AboutSection from "@/components/aboutSection";
 import Home from "@/app/page";
+import ProjectsSection from "@/components/historySection";
 
 interface ComponentPreviewsProps {
     children: React.ReactNode
@@ -28,6 +29,9 @@ const ComponentPreviews = ({children}: ComponentPreviewsProps) => {
             </ComponentPreview>
             <ComponentPreview path="/Home">
                 <Home/>
+            </ComponentPreview>
+            <ComponentPreview path="/ProjectsSection">
+                <ProjectsSection/>
             </ComponentPreview>
         </Previews>
     );

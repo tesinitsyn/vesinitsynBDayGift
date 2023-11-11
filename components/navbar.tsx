@@ -95,20 +95,20 @@ export default function Navbar() {
                                     </Link>
                                 )
                             })}
-                            <button onClick={()=>{downloadCV(pdf_url)}}>Download CV</button>
+                            <button onClick={()=>{downloadCV(pdf_url)}} className={
+                                "block lg:inline-block text-neutral-900  hover:text-neutral-500 dark:text-neutral-100"
+                            }>Download CV</button>
                             {currentTheme === "dark" ? (
                                 <button
                                     onClick={() => setTheme("light")}
-                                    className="bg-slate-100 p-2 rounded-xl"
                                 >
-                                    <RiSunLine size={25} color="black"/>
+                                    Change Theme
                                 </button>
                             ) : (
                                 <button
                                     onClick={() => setTheme("dark")}
-                                    className="bg-slate-100 p-2 rounded-xl"
                                 >
-                                    <RiMoonFill size={25}/>
+                                    Change Theme
                                 </button>
                             )}
                         </div>

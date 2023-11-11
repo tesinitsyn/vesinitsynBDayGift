@@ -76,7 +76,7 @@ const AboutSection = () => {
                         <br/>
                         <h1 className="text-2xl font-bold mb-6">☎️ Socials</h1>
                         <div className="flex flex-wrap flex-row justify-center md:justify-start">
-                            <Link href="https://www.linkedin.com/in/vladimir-sinitsyn-754316159/">
+                            <Link href="https://www.linkedin.com/in/vladimir-sinitsyn-754316159/" rel="noreferrer" target="_blank">
                                 <p className="bg-gray-200 px-4 py-2 mr-2 mt-2 text-black rounded font-semibold">
                                     {/*<BsLinkedin*/}
                                     {/*    size={20}*/}
@@ -84,7 +84,7 @@ const AboutSection = () => {
                                     {/*/>*/}
                                     LinkedIn</p>
                             </Link>
-                            <Link href="https://instagram.com/volodyakisataisa?igshid=MmVlMjlkMTBhMg==">
+                            <Link href="https://instagram.com/volodyakisataisa?igshid=MmVlMjlkMTBhMg==" rel="noreferrer" target="_blank">
                                 <p className="bg-gray-200 px-4 py-2 mr-2 mt-2 text-black rounded font-semibold">
                                     {/*<BsInstagram*/}
                                     {/*    size={20}*/}
@@ -92,7 +92,7 @@ const AboutSection = () => {
                                     {/*/>*/}
                                     Instagram</p>
                             </Link>
-                            <Link href="https://t.me/vesinitsyn">
+                            <Link href="https://t.me/vesinitsyn" rel="noreferrer" target="_blank">
                                 <p className="bg-gray-200 px-4 py-2 mr-2 mt-2 text-black rounded font-semibold">
                                     {/*<BsTelegram*/}
                                     {/*    size={20}*/}
